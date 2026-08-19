@@ -79,7 +79,15 @@ $config['environment'] = getenv('APP_ENV') ?: 'development';
 | WARNING: You MUST set this value!
 |
 */
-$config['base_url'] 				= 'http://127.0.0.1:3000/';
+$configured_base_url = getenv('APP_URL') ?: getenv('RENDER_EXTERNAL_URL');
+if (!$configured_base_url && isset($_SERVER['HTTP_HOST'])) {
+	$forwarded_protocol = $_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '';
+	$protocol = $forwarded_protocol ?: (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http');
+	$configured_base_url = $protocol . '://' . $_SERVER['HTTP_HOST'];
+}
+$config['base_url'] 				= $configured_base_url
+	? rtrim($configured_base_url, '/') . '/'
+	: 'http://127.0.0.1:3000/';
 
 /*
 |--------------------------------------------------------------------------
