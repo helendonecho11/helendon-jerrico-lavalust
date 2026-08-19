@@ -1,0 +1,140 @@
+Date: 19/08/2026 4:33:00
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:33:20
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:36:03
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:36:33
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:36:40
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:37:18
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:37:19
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:37:19
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:37:20
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:38:17
+Exception Class: Error
+Error Message: Call to a member function handle() on string
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 99
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:38:21
+Exception Class: Error
+Error Message: Call to a member function handle() on string
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 99
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:38:23
+Exception Class: Error
+Error Message: Call to a member function handle() on string
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 99
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:39:44
+Exception Class: Error
+Error Message: Class "StudentMiddleware" not found
+Filename: C:\xampp2\htdocs\lavalust\app\config\middleware.php
+Line Number: 45
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:40:43
+Exception Class: Error
+Error Message: Class "Middleware" not found
+Filename: C:\xampp2\htdocs\lavalust\app\middlewares\StudentMiddleware.php
+Line Number: 4
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:41:21
+Exception Class: Error
+Error Message: Undefined constant "SCHEME_DIR"
+Filename: C:\xampp2\htdocs\lavalust\app\config\middleware.php
+Line Number: 44
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:42:02
+Exception Class: RuntimeException
+Error Message: Middleware config not found.
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Middleware.php
+Line Number: 58
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:45:45
+Exception Class: RuntimeException
+Error Message: View student_profile not found in module or app/views
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Invoker.php
+Line Number: 253
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:46:48
+Exception Class: RuntimeException
+Error Message: View student_profile not found in module or app/views
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Invoker.php
+Line Number: 253
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:46:49
+Exception Class: RuntimeException
+Error Message: View student_profile not found in module or app/views
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Invoker.php
+Line Number: 253
+------------------------------------------------------------------
+
+Date: 19/08/2026 4:46:49
+Exception Class: RuntimeException
+Error Message: View student_profile not found in module or app/views
+Filename: C:\xampp2\htdocs\lavalust\scheme\kernel\Invoker.php
+Line Number: 253
+------------------------------------------------------------------
+
