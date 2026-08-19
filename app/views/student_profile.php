@@ -124,6 +124,64 @@
             margin-bottom: 32px;
         }
 
+        .privacy-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 28px;
+            padding: 16px 20px;
+            background: var(--ink);
+            border: 3px solid var(--ink);
+            border-radius: 6px;
+            box-shadow: 6px 6px 0 var(--web-red);
+        }
+
+        .privacy-status {
+            color: var(--paper);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .privacy-status strong { color: var(--gold); }
+
+        .privacy-toggle {
+            padding: 10px 16px;
+            color: var(--ink);
+            background: var(--gold);
+            border: 2px solid var(--paper);
+            border-radius: 4px;
+            cursor: pointer;
+            font: 800 13px 'Rubik', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .privacy-toggle:hover { background: white; }
+
+        .private-value {
+            display: inline-block;
+            transition: filter 0.2s, opacity 0.2s;
+        }
+
+        body.is-locked .private-value {
+            color: transparent;
+            text-shadow: 0 0 8px rgba(11, 11, 15, 0.75);
+            user-select: none;
+        }
+
+        body.is-locked .private-value::after {
+            content: 'Locked';
+            color: var(--web-blue);
+            text-shadow: none;
+        }
+
+        .lock-note {
+            margin-top: 12px;
+            color: #5b5b68;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
         /* COMIC PANEL CARDS */
         .info-grid {
             display: grid;
@@ -199,10 +257,11 @@
             .page-title { font-size: 34px; }
             .web-corner { width: 160px; height: 160px; }
             .info-card { transform: none !important; }
+            .privacy-bar { align-items: stretch; flex-direction: column; }
         }
     </style>
 </head>
-<body>
+<body class="is-locked">
 
     <!-- Spider-web corner decorations -->
     <svg class="web-corner top-left" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -256,43 +315,61 @@
         <div class="label">Student Dossier</div>
         <h1 class="page-title">Student Profile</h1>
 
+        <section class="privacy-bar" aria-live="polite">
+            <p class="privacy-status">Student information status: <strong id="privacy-status">Locked</strong></p>
+            <button class="privacy-toggle" id="privacy-toggle" type="button" aria-pressed="false">Allow Access</button>
+        </section>
+
         <section class="info-grid">
             <div class="info-card">
                 <h3>Student ID</h3>
-                <p><?= $student['student_id']; ?></p>
+                <p><span class="private-value"><?= htmlspecialchars($student['student_id'], ENT_QUOTES, 'UTF-8'); ?></span></p>
             </div>
             <div class="info-card">
                 <h3>Name</h3>
-                <p><?= $student['name']; ?></p>
+                <p><span class="private-value"><?= htmlspecialchars($student['name'], ENT_QUOTES, 'UTF-8'); ?></span></p>
             </div>
             <div class="info-card">
                 <h3>Course</h3>
-                <p><?= $student['course']; ?></p>
+                <p><span class="private-value"><?= htmlspecialchars($student['course'], ENT_QUOTES, 'UTF-8'); ?></span></p>
             </div>
             <div class="info-card">
                 <h3>Year and Section</h3>
-                <p><?= $student['year']; ?> / <?= $student['section']; ?></p>
+                <p><span class="private-value"><?= htmlspecialchars($student['year'] . ' / ' . $student['section'], ENT_QUOTES, 'UTF-8'); ?></span></p>
             </div>
             <div class="info-card">
                 <h3>Email</h3>
-                <p><?= $student['email']; ?></p>
+                <p><span class="private-value"><?= htmlspecialchars($student['email'], ENT_QUOTES, 'UTF-8'); ?></span></p>
             </div>
             <div class="info-card">
                 <h3>Contact Number</h3>
-                <p><?= $student['contact']; ?></p>
+                <p><span class="private-value"><?= htmlspecialchars($student['contact'], ENT_QUOTES, 'UTF-8'); ?></span></p>
             </div>
         </section>
 
         <section class="extra-card">
             <h3>Address</h3>
-            <p><?= $student['address']; ?></p>
+            <p><span class="private-value"><?= htmlspecialchars($student['address'], ENT_QUOTES, 'UTF-8'); ?></span></p>
         </section>
 
         <section class="extra-card">
             <h3>Civil Status</h3>
-            <p><?= $student['status']; ?></p>
+            <p><span class="private-value"><?= htmlspecialchars($student['status'], ENT_QUOTES, 'UTF-8'); ?></span></p>
+            <p class="lock-note">Private details are hidden until access is allowed.</p>
         </section>
     </main>
+
+    <script>
+        const privacyToggle = document.getElementById('privacy-toggle');
+        const privacyStatus = document.getElementById('privacy-status');
+
+        privacyToggle.addEventListener('click', () => {
+            const isLocked = document.body.classList.toggle('is-locked');
+            privacyStatus.textContent = isLocked ? 'Locked' : 'Visible';
+            privacyToggle.textContent = isLocked ? 'Allow Access' : 'Hide Info';
+            privacyToggle.setAttribute('aria-pressed', String(!isLocked));
+        });
+    </script>
 
 </body>
 </html>
